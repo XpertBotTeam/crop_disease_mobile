@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-08-08T08:50:52.039Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="W5J8S_Vo6bZnhgIEEHwk" version="21.6.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-08-08T10:04:02.951Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="Lwk2Qe0dGmtu8itGnU4q" version="21.6.6" type="github">
   <diagram name="Page-1" id="S4pLoth3lDWCldQ0_hmS">
     <mxGraphModel dx="1900" dy="574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -66,6 +66,114 @@
         </mxCell>
         <mxCell id="NyZ2p4l8XGoLrlmHf86C-38" value="" style="rounded=0;whiteSpace=wrap;html=1;imageAspect=0;" vertex="1" parent="1">
           <mxGeometry x="-310" y="40" width="190" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-39" value="crop diseases" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-40" value="image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="80" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-41" value="Name of plant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="80" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-42" value="Name of desease" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="110" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-43" value="Description" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="140" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-44" value="image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="180" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-45" value="Name of plant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="180" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-46" value="Name of desease" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="210" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-47" value="Description" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="240" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-48" value="image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="280" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-49" value="Name of plant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="280" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-50" value="Name of desease" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="310" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-51" value="Description" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="340" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-52" value="" style="rounded=0;whiteSpace=wrap;html=1;imageAspect=0;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="40" width="190" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-54" value="Description" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-55" value="image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="80" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-56" value="Name of plant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="160" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-57" value="Name of desease" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="190" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-58" value="Description" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="220" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-59" value="" style="rounded=0;whiteSpace=wrap;html=1;imageAspect=0;" vertex="1" parent="1">
+          <mxGeometry x="235" y="40" width="190" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-60" value="Take Image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-61" value="Take image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="260" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-62" value="import from Gallery" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="303" width="120" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-63" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#D45B07;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.container_registry_image;" vertex="1" parent="1">
+          <mxGeometry x="306" y="142" width="48" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-64" value="Analyse desease" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="340" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-65" value="" style="rounded=0;whiteSpace=wrap;html=1;imageAspect=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="190" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-66" value="Description" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-67" value="image" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="80" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-68" value="Name of plant" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="160" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-69" value="Name of desease" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="190" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-70" value="Description" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="220" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-71" value="" style="rounded=0;whiteSpace=wrap;html=1;imageAspect=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="40" width="190" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-72" value="Community Expert" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-73" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="100" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-74" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="185" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NyZ2p4l8XGoLrlmHf86C-75" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="795" y="287" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
