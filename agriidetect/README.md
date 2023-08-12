@@ -1,4 +1,4 @@
-# agriidetect
+# agridetect
 
 A new Flutter project.
 
