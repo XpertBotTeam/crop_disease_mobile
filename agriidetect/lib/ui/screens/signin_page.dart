@@ -1,66 +1,81 @@
 import 'package:agriidetect/ui/screens/signup_page.dart';
 import 'package:flutter/material.dart';
 
-import 'package:page_transition/page_transition.dart';
-
-import '../../utils/constants.dart';
 
 
 
-class SignIn extends StatelessWidget {
+
+
+class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 
   @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
-    return Scaffold(
 
+    return Container(
+
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/back.jpg'),
+         fit: BoxFit.cover,
+        ),
+      ),
+
+child: Scaffold(
+  backgroundColor: Colors.transparent,
       body:Stack(
-        children: [
-          Container(
+     children:[
+Container(),
+       Container(
+         padding: EdgeInsets.only(left: 30, top: 40),
 
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/back.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 60,
-            left: 30,
-            child: Material(
 
-              borderRadius: BorderRadius.all(Radius.circular(50)),
-              child:CircleAvatar(
-    radius: 50,
-    backgroundImage: AssetImage('assets/images/playstore.png'),
-    ),
-            ),
-          ),
-          Positioned(
-            top: 180,
-            left: 30,
-            child: Text(
-              'Everyone should\nlive with a little\nmore green.',
-              style: TextStyle(
-                fontFamily: 'Roboto Slab',
-                fontSize: 30,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 300,//530
-            left: 40,
-            right: 40,
+         child:       Material(
+
+           borderRadius: BorderRadius.all(Radius.circular(50)),
+           child:CircleAvatar(
+             radius: 50,
+             backgroundImage: AssetImage('assets/images/playstore.png'),
+           ),
+         ),
+       ),
+       Container(
+         padding: EdgeInsets.only(left: 30, top: 140),
+
+         child: Text(
+           'Everyone should\nlive with a little\nmore green.',
+           style: TextStyle(
+             fontFamily: 'Roboto Slab',
+             fontSize: 30,
+             color: Colors.white,
+           ),
+         ),
+       ),
+
+
+
+
+      SingleChildScrollView(
+
+    child: Container(
+    padding: EdgeInsets.only(
+    top: MediaQuery
+        .of(context)
+        .size
+        .height * 0.5),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 30,
-                ),
+                Container(
+                    margin: EdgeInsets.only(left: 35, right: 35),
+                    child: Column(
+                        children: [
 
       TextField(
 
@@ -100,7 +115,11 @@ class SignIn extends StatelessWidget {
 
 Row(
   children: [
-      Expanded(child:Container(
+      Expanded(
+
+      child: GestureDetector(
+      onTap: (){},
+        child:Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20),),
           color:Colors.white,
@@ -116,7 +135,7 @@ Row(
             ),
           ),
         ),
-      ), ) ,
+      ), )) ,
 
     Padding(
       padding: EdgeInsets.symmetric(horizontal: 10),
@@ -172,8 +191,9 @@ Row(
                 const SizedBox(
                   height: 20,
                 ),
+
                 Container(
-                  width: size.width,
+                  width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                       border: Border.all(color: Color.fromRGBO(18,58,57,1).withOpacity(0.8)),
                       borderRadius: BorderRadius.circular(10)),
@@ -181,26 +201,35 @@ Row(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      SizedBox(
+
+                           SizedBox(
                         height: 30,
                         child: Image.asset('assets/images/google.png'),
                       ),
-                      Text(
+
+
+                      GestureDetector(
+                          onTap: (){    Navigator.push(context,MaterialPageRoute(builder: (context){
+                            return SignUp();
+                          }),);},
+                    child:  Text(
                         'Sign IN with Google',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18.0,
                         ),
-                      ),
+                  )  ),
                     ],
                   ),
                 ),
 
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+  ])) ],
+            )
+    ),
+      )
+     ]
+
+              ),
+    ) );
   }
 }
