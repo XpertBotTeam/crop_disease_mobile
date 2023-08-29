@@ -3,18 +3,22 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/constants.dart';
 
+
 class CustomTextfield extends StatelessWidget {
   final IconData icon;
   final bool obscureText;
   final String hintText;
+  final String? Function(String?)? validator;
+  final TextEditingController textEditingController;
 
-   CustomTextfield( this.icon ,this.obscureText,  this.hintText) ;
+
+   CustomTextfield( this.validator,this.textEditingController,this.icon ,this.obscureText,  this.hintText) ;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-
-
+    return TextFormField(
+validator: validator,
+      controller: textEditingController,
       obscureText: obscureText,
       style: TextStyle(
         color: Constants.blackColor,
