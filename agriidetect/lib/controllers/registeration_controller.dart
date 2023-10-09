@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:agriidetect/ui/home.dart';
+
+import 'package:agriidetect/ui/screens/widgets/BottomNavBarState.dart';
 
 
 import 'package:flutter/material.dart';
@@ -46,7 +47,7 @@ class RegisterationController extends GetxController {
           passwordController.clear();
           confirmPass.clear();
 
-         Get.off(HomeScreen());
+         Get.off(BottomNavBarState());
 
         }   else{
           showAlertDialog(Get.context!,"ERROR","Email already been used");

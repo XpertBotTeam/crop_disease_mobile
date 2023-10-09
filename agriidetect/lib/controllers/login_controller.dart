@@ -1,19 +1,22 @@
 import 'dart:convert';
 
 
-import 'package:agriidetect/ui/home.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+
+
+import '../ui/screens/widgets/BottomNavBarState.dart';
 import '../utils/api_endpoints.dart';
 
 class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   Future<void> loginWithEmail() async {
     var headers = {'Content-Type': 'application/json'};
@@ -30,12 +33,22 @@ class LoginController extends GetxController {
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
 
+
+        var token = json['token'];
+        final SharedPreferences? prefs = await _prefs;
+        await prefs?.setString('token', token);
+
+
+
+
         if (json['success'] == true) {
 
           showAlertDialog(Get.context!, "SUCCESS", "Authentication Successful");
-          emailController.clear();
-          passwordController.clear();
-          Get.off(HomeScreen());
+
+            emailController.clear();
+            passwordController.clear();
+            Get.off(BottomNavBarState());
+
         }else{
           showAlertDialog(Get.context!,"ERROR","incorrect id or password");
         }

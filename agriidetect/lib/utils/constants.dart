@@ -13,4 +13,18 @@ class Constants {
   static var descriptionTwo = "Are you a plant lover? Connect with other plant lovers.";
   static var titleThree = "Plant a tree, green the Earth";
   static var descriptionThree = "Find almost all types of plants that you like here.";
+  static const kHeadTextStyle = TextStyle(
+    color: Colors.black,
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const kHeadSubtitleTextStyle = TextStyle(
+    fontSize: 18,
+    color: Colors.black87,
+  );
+
+
+
+
 }
