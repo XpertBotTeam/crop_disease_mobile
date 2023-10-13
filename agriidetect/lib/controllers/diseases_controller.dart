@@ -31,8 +31,27 @@ class DiseasesController extends GetxController {
       throw Exception('Failed to load ');
     }
   }
+  Future<bool> addlocation(Map<String, String> body) async {
+    final SharedPreferences? prefs = await _prefs;
+    var token=prefs?.get('token');
 
-  Future<bool> addImage(Map<String, String> body,String filepath) async {
+    var url = Uri.parse(
+        ApiEndPoints.baseUrl + ApiEndPoints.authEndpoints.location);
+    http.Response response = await http.post(url,   headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8', 'Authorization': 'Bearer $token'
+    },   body: jsonEncode(body));
+
+
+
+      if (response.statusCode == 201) {
+        print('location send');
+        return true;
+      } else {print(response.statusCode);
+      return false;
+      } }
+
+
+  Future<bool> addImage(String filepath) async {
     final SharedPreferences? prefs = await _prefs;
     var token=prefs?.get('token');
     Map<String, String> headers = {
@@ -41,7 +60,7 @@ class DiseasesController extends GetxController {
       'Authorization': 'Bearer $token'
     };
     var request = http.MultipartRequest('POST', Uri.parse(  ApiEndPoints.baseUrl + ApiEndPoints.authEndpoints.photo))
-      ..fields.addAll(body)
+
       ..headers.addAll(headers)
       ..files.add(await http.MultipartFile.fromPath('image', filepath));
     var response = await request.send();

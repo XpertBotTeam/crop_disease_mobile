@@ -16,8 +16,11 @@ import '../utils/api_endpoints.dart';
 class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController oldpasswordController = TextEditingController();
+  TextEditingController newpasswordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-
+  var token;
   Future<void> loginWithEmail() async {
     var headers = {'Content-Type': 'application/json'};
     try {
@@ -34,7 +37,7 @@ class LoginController extends GetxController {
         final json = jsonDecode(response.body);
 
 
-        var token = json['token'];
+       token = json['token'];
         final SharedPreferences? prefs = await _prefs;
         await prefs?.setString('token', token);
 
@@ -56,6 +59,39 @@ class LoginController extends GetxController {
     } catch (error) {
       Get.back();
       showAlertDialog(Get.context!,"No Internet","Check your internet connection.");
+    }
+  }
+  Future<void> updatepassword() async {
+    var headers = {'Content-Type': 'application/json',    'Authorization': 'Bearer $token'};
+
+    try {
+      var url = Uri.parse(
+          ApiEndPoints.baseUrl + ApiEndPoints.authEndpoints.update);
+      Map body = {
+        'old_password': oldpasswordController.text,
+        'new_password': newpasswordController.text,
+        'confirm_password':confirmpasswordController.text,
+      };
+      http.Response response =
+          await http.post(url, body: jsonEncode(body), headers: headers);
+
+      if (response.statusCode == 200) {
+
+
+
+
+
+
+
+
+
+        oldpasswordController.clear();
+        newpasswordController.clear();
+        confirmpasswordController.clear();
+    }
+    } catch (error) {
+    Get.back();
+    showAlertDialog(Get.context!,"No Internet","Check your internet connection.");
     }
   }
 }

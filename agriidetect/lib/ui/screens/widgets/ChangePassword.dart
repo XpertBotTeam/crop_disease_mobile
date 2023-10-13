@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../../controllers/login_controller.dart';
 import '../../../utils/constants.dart';
 import 'custom_textfield.dart';
 
@@ -11,13 +14,11 @@ class PasswordUpdateForm extends StatefulWidget {
 
 class _PasswordUpdateFormState extends State<PasswordUpdateForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  TextEditingController PasswordController = TextEditingController();
-  TextEditingController RPasswordController = TextEditingController();
+  LoginController loginController = Get.put(LoginController());
 
   void _handlePasswordUpdate() {
     // Implement your password update logic here
-    String oldPassword = PasswordController.text;
-    String newPassword = RPasswordController.text;
+loginController.updatepassword();
 
     // Validate input and send a request to the backend
     // Update local state based on the backend response
@@ -28,7 +29,7 @@ class _PasswordUpdateFormState extends State<PasswordUpdateForm> {
     Size size = MediaQuery.of(context).size;
     bool locked = true;
     return  Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
   child:  Form(
       key: _formKey,
       child: Column(
@@ -42,6 +43,8 @@ class _PasswordUpdateFormState extends State<PasswordUpdateForm> {
               fontWeight: FontWeight.w700,
             ),
           ),
+          SizedBox(
+            height: 30.0,),
           TextFormField(
             obscureText: locked,
             validator:  MultiValidator([
@@ -52,7 +55,7 @@ class _PasswordUpdateFormState extends State<PasswordUpdateForm> {
                   errorText:
                   "Password should not be greater than 15 characters")
             ]),
-            controller: PasswordController,
+            controller: loginController.oldpasswordController,
             decoration: InputDecoration(
               prefixIcon: IconButton(
                 icon: Icon(locked ? Icons.lock : Icons.lock_open, color: Constants.blackColor.withOpacity(.3),),
@@ -63,21 +66,37 @@ class _PasswordUpdateFormState extends State<PasswordUpdateForm> {
                   });
                 },
               ),
-              hintText: 'Enter a New Password',
+              hintText: 'Enter old Password',
               border: InputBorder.none,
             ),
 
           ),
-
+          SizedBox(
+            height: 30.0,),
           CustomTextfield(
                 (value){
               if(value!.isEmpty)
                 return '* Required';
-              if(value != PasswordController.text)
+
+
+            },
+           loginController.newpasswordController,
+            Icons.lock,
+            true,
+            'Enter New Password',
+
+          ),
+          SizedBox(
+            height: 30.0,),
+          CustomTextfield(
+                (value){
+              if(value!.isEmpty)
+                return '* Required';
+              if(value != loginController.newpasswordController.text)
                 return 'Not Match';
 
             },
-         RPasswordController,
+       loginController.confirmpasswordController,
             Icons.lock,
             true,
             'Confirm Password',
@@ -85,32 +104,34 @@ class _PasswordUpdateFormState extends State<PasswordUpdateForm> {
           ),
 
           SizedBox(
-            height: 50.0,),
-          ElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _handlePasswordUpdate();
-              }
-            },
-            child: Container(
-              width: size.width,
-              decoration: BoxDecoration(
-                color: Constants.primaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              padding:
-              const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-              child: const Center(
-                child: Text(
-                  'Update Password',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
+            height: 30.0,),
+
+            GestureDetector(
+              onTap: () {
+                if (_formKey.currentState!.validate()) {
+                  _handlePasswordUpdate();
+                }
+        },
+              child: Container(
+                width: size.width,
+                decoration: BoxDecoration(
+                  color: Constants.primaryColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding:
+                const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                child: const Center(
+                  child: Text(
+                    'Update Password',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
+
         ],
       ),
     ) );

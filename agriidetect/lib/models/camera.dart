@@ -1,8 +1,11 @@
 
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -25,7 +28,8 @@ class SetPhotoScreen extends StatefulWidget {
 
 class _SetPhotoScreenState extends State<SetPhotoScreen> {
   File? _image;
-
+  late Position _currentPosition;
+  late String _currentAddress;
   DiseasesController diseasesController=new DiseasesController();
   Future _pickImage(ImageSource source) async {
     try {
@@ -142,7 +146,17 @@ class _SetPhotoScreenState extends State<SetPhotoScreen> {
                   InkWell(
     onTap: () {
     setState(() {
-
+  if(_image!=null) {
+    diseasesController.addImage(_image!.path);
+    _getCurrentLocation();
+    Map<String, String> body = {
+      'name': _currentAddress,
+      'latitude': _currentPosition.latitude.toString(),
+      'longitude': _currentPosition.longitude.toString(),
+      'description': '',
+    };
+    diseasesController.addlocation(body);
+  }
     });
    },
                    child:Text(
@@ -166,4 +180,36 @@ class _SetPhotoScreenState extends State<SetPhotoScreen> {
     );
   }
 
+  _getCurrentLocation() async {
+    LocationPermission permission;
+    permission = await Geolocator.requestPermission();
+    Geolocator
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high)
+
+        .then((Position position) {
+      setState(() {
+        _currentPosition = position;
+        _getAddressFromLatLng();
+      });
+    }).catchError((e) {
+      print(e);
+    });
+  }
+
+  _getAddressFromLatLng() async {
+    try {
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+          _currentPosition.latitude,
+          _currentPosition.longitude
+      );
+
+      Placemark place = placemarks[0];
+
+      setState(() {
+        _currentAddress = "${place.locality}, ${place.postalCode}, ${place.country}";
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
 }
